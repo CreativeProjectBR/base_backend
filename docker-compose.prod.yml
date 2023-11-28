@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  api:
+    container_name: mylar_core
+    build: 
+      context: ./
+      dockerfile: Dockerfile.dev
+    restart: always
+    ports:
+      - "5050:5050"
+    environment:
+      - PORT=5050
+      - NODE_ENV=development
+      - SERVICE=mylar_core
+      - VERSION=1.0.0
+      - JWT_SECRET_KEY=JWT_SECRET_KEY
+      - JWT_PUBLIC_KEY=JWT_PUBLIC_KEY
+      - JWT_PRIVATE_KEY=JWT_PRIVATE_KEY
+      - DATABASE_URL=""
+    volumes:
+      - .:/usr/src/mylar_core
+      - /usr/src/mylar_core/node_modules

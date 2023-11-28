@@ -1,0 +1,6 @@
+node_modules
+
+.env
+.env.testing
+dist
+build
